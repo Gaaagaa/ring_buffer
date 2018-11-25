@@ -57,6 +57,9 @@ typedef struct x_ringbuf_t
 /** 判断环形缓存是否为 满 */
 #define RBUF_IS_FULL(xrbt_sptr)    ((xrbt_sptr)->xut_size == (xrbt_sptr)->xut_vlen)
 
+/** 计算环形缓存剩余的空间大小 */
+#define RBUF_REMAIN_SIZE(xrbt_sptr)  ((xrbt_sptr)->xut_size - (xrbt_sptr)->xut_vlen)
+
 /**********************************************************/
 /**
  * @brief 用于 环形缓存的内存申请操作 回调函数类型（内存要释放时，请调用 xfunc_ringbuf_free 指向的接口）。
